@@ -13,6 +13,10 @@
   border-radius: 15px;
   margin-right: 20px;
 
+  &:hover {
+    background-color: #f5f344;
+  }
+
   .city {
     font-family: sans-serif;
     text-align: center;
@@ -22,7 +26,7 @@
   }
 
   .temperature {
-      font-family: sans-serif;
+    font-family: sans-serif;
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
@@ -38,8 +42,18 @@
     line-height: 150px;
     margin-bottom: 20px;
     box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
-    background: #FF4E50 !important; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, #F9D423, #FF4E50) !important; /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, #F9D423, #FF4E50) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    &.hot {
+      background: #FF4E50 !important; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to top, #F9D423, #FF4E50) !important; /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to top, #F9D423, #FF4E50) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    &.cold {
+      background: #373B44;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
   }
 }

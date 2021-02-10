@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Forecast } from 'src/app/dto/forecast';
 
 @Component({
   selector: 'app-card',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  @Input() childEar: Forecast;
+  @Output() childMouth: EventEmitter<any>;
+
+  constructor() {
+    this.childEar = new Forecast();
+    this.childMouth = new EventEmitter<any>();
+  }
 
   ngOnInit(): void {
+  }
+
+  clicking(): void {
+    console.log("clicking in card");
+    this.childMouth.emit(this.childEar.id);
   }
 
 }

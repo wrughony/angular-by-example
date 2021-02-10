@@ -1,5 +1,6 @@
-<div class="card">
-  <div class="city">Port-Louis</div>
-  <div class="weather-condition"></div>
-  <div class="temperature">37 °C</div>
+<div class="card" (click)="clicking()">
+  <div class="city">{{ childEar.city }}</div>
+  <div class="weather-condition" [class.cold]="childEar.temperature < 25" [class.hot]="childEar.temperature >= 25"></div>
+  <div class="temperature">{{ childEar.temperature }} °C</div>
+  <div class="temperature" *ngIf="childEar.temperature < 25">Cold</div>
 </div>
